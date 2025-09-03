@@ -7,3 +7,4 @@ pypdfium2
 icalendar
 python-multipart
 python-dateutil
+pytesseract
