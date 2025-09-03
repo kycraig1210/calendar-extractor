@@ -19,15 +19,17 @@ import pypdfium2 as pdfium
 import pytesseract
 from icalendar import Calendar, Event as ICalEvent
 
+import platform
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+
 # Optional: for better PDF text extraction
 try:
     import fitz  # PyMuPDF
     HAS_PYMUPDF = True
 except ImportError:
     HAS_PYMUPDF = False
-
-# --- Point pytesseract to your install (Windows) ---
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # --- Storage ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
